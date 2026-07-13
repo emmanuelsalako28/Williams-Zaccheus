@@ -124,13 +124,14 @@
   var themeToggle = document.getElementById('themeToggle');
   var body = document.body;
 
-  // Retrieve saved preference or default to dark
+  // Retrieve saved preference or default to light
   var currentTheme = localStorage.getItem('theme');
-  if (currentTheme === 'light') {
+  if (currentTheme === 'dark') {
+    body.classList.remove('light-mode');
+    themeToggle.textContent = '☀️';
+  } else {
     body.classList.add('light-mode');
     themeToggle.textContent = '🌙';
-  } else {
-    themeToggle.textContent = '☀️';
   }
 
   themeToggle.addEventListener('click', function() {
