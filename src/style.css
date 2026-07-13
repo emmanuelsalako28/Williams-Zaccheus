@@ -999,47 +999,52 @@ header.scrolled .nav-pill {
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 860px) {
-  /* Full-bleed background hero on mobile */
+  /* Stacked layout on mobile to prevent text overlapping face */
   #hero {
-    height: 100vh;
-    min-height: 100vh;
-    padding: 0;
+    height: auto;
+    min-height: auto;
+    padding: 7.5rem 0 3rem 0;
     margin: 0;
   }
   .hero-grid {
-    display: block;
-    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    gap: 2.5rem;
   }
   .hero-image-col {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    position: relative;
+    width: calc(100% - 12vw);
+    margin: 0 auto;
+    height: 420px;
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    z-index: 5;
+    box-shadow: var(--shadow);
   }
   .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 15%;
   }
   .hero-image-overlay {
     display: block;
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(15, 3, 4, 0.95) 0%, rgba(15, 3, 4, 0.7) 45%, transparent 75%);
+    background: linear-gradient(to top, var(--cream) 0%, rgba(15, 3, 4, 0.4) 15%, transparent 40%);
     z-index: 2;
+    pointer-events: none;
   }
   .hero-text-col {
     position: relative;
     z-index: 10;
-    height: 100%;
-    padding: 8rem 6vw 4.5rem 6vw;
+    height: auto;
+    padding: 0 6vw;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-start;
     text-align: left;
     background: transparent;
