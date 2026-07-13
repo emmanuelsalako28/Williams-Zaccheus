@@ -268,11 +268,6 @@
   var cannedSearch = document.getElementById('cannedSearch');
   var cannedCategoryFilter = document.getElementById('cannedCategoryFilter');
 
-  // Create Toast Container
-  var toast = document.createElement('div');
-  toast.id = 'toastNotification';
-  toast.innerHTML = '<span>✓</span> Response template copied!';
-  document.body.appendChild(toast);
 
   function renderTemplates() {
     if (!cannedList) return;
@@ -318,16 +313,10 @@
           copyBtn.innerHTML = '<span>✓</span> Copied!';
           copyBtn.classList.add('copied');
           
-          toast.classList.add('show');
-          
           setTimeout(function() {
             copyBtn.innerHTML = '<span class="copy-icon">📋</span> Copy';
             copyBtn.classList.remove('copied');
           }, 2000);
-          
-          setTimeout(function() {
-            toast.classList.remove('show');
-          }, 3000);
         }).catch(function(err) {
           console.error('Failed to copy text: ', err);
         });

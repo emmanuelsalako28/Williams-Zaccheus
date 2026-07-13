@@ -1617,29 +1617,7 @@ body.light-mode .nav-toggle span {
   border-color: #10B981;
 }
 
-/* Copy notification toast */
-#toastNotification {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-  color: #fff;
-  padding: 0.85rem 1.6rem;
-  border-radius: 12px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transform: translateY(150%);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: 1000;
-}
 
-#toastNotification.show {
-  transform: translateY(0);
-}
 
 /* Tab 2: Inbox Organizer styling */
 .toggle-control-container {
