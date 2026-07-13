@@ -804,7 +804,7 @@ header.scrolled .nav-pill {
 .footer {
   background: #000;
   border-top: 1px solid var(--line);
-  color: var(--brown-soft);
+  color: #fff;
   padding: 5rem 0 3rem;
   font-size: 0.9rem;
   position: relative;
@@ -834,7 +834,8 @@ header.scrolled .nav-pill {
 .footer-desc {
   line-height: 1.6;
   font-size: 0.85rem;
-  color: var(--brown-soft);
+  color: #fff;
+  opacity: 0.85;
 }
 
 .footer-title {
@@ -854,22 +855,25 @@ header.scrolled .nav-pill {
 
 .footer-links a {
   font-size: 0.85rem;
-  color: var(--brown-soft);
-  transition: color 0.3s ease;
+  color: #fff;
+  opacity: 0.85;
+  transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #fff;
+  color: var(--terracotta-soft);
+  opacity: 1;
 }
 
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 2rem;
   font-size: 0.8rem;
-  color: #6b7280;
+  color: #fff;
+  opacity: 0.7;
 }
 
 .back-to-top {
@@ -1294,16 +1298,7 @@ body.light-mode strong {
   color: var(--brown-deep);
 }
 
-/* Footer layout coloring */
-body.light-mode .footer {
-  background: #FCF9F2;
-  border-top-color: var(--line);
-  color: var(--brown-soft);
-}
 
-body.light-mode .footer-logo, body.light-mode .footer-title {
-  color: var(--brown-deep);
-}
 
 /* Hamburger toggle menu */
 body.light-mode .nav-toggle span {
@@ -1312,7 +1307,7 @@ body.light-mode .nav-toggle span {
 
 @media (max-width: 860px) {
   body.light-mode .nav-pill {
-    background: rgba(246, 241, 231, 0.98);
+    background: rgba(255, 253, 247, 0.98);
   }
 }
 
