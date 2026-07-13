@@ -25,7 +25,7 @@ body {
   background-color: var(--cream);
   background-image: radial-gradient(circle at 50% 50%, rgba(185, 28, 28, 0.2) 0%, transparent 100%);
   color: var(--brown-deep);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   position: relative;
 }
@@ -59,7 +59,7 @@ body::before {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   line-height: 1.15;
   color: var(--brown-deep);
