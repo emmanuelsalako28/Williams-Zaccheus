@@ -999,67 +999,82 @@ header.scrolled .nav-pill {
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 860px) {
-  /* Stacked layout on mobile to prevent text overlapping face */
+  /* Full-bleed background hero on mobile */
   #hero {
-    height: auto;
-    min-height: auto;
-    padding: 7.5rem 0 3rem 0;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 0;
     margin: 0;
-  }
-  .hero-grid {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+  }
+  .hero-grid {
+    display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    gap: 2.5rem;
+    height: 100%;
   }
   .hero-image-col {
-    position: relative;
-    width: calc(100% - 12vw);
-    margin: 0 auto;
-    height: 420px;
-    border-radius: 24px;
-    border: 1px solid var(--line);
-    overflow: hidden;
-    z-index: 5;
-    box-shadow: var(--shadow);
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
   .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center 10%;
   }
   .hero-image-overlay {
     display: block;
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, var(--cream) 0%, rgba(15, 3, 4, 0.4) 15%, transparent 40%);
+    background: linear-gradient(to top, rgba(15, 3, 4, 0.4) 0%, transparent 60%);
     z-index: 2;
     pointer-events: none;
   }
+  body.light-mode .hero-image-overlay {
+    background: linear-gradient(to top, rgba(255, 253, 247, 0.4) 0%, transparent 60%);
+  }
   .hero-text-col {
-    position: relative;
+    position: absolute;
+    bottom: 2rem;
+    left: 6vw;
+    right: 6vw;
     z-index: 10;
     height: auto;
-    padding: 0 6vw;
+    padding: 1.6rem 1.4rem;
+    border-radius: 20px;
+    background: rgba(25, 6, 8, 0.75); /* Frosted deep wine glass for dark mode */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
     text-align: left;
-    background: transparent;
+  }
+  body.light-mode .hero-text-col {
+    background: rgba(255, 255, 255, 0.78); /* Frosted pure white glass for light mode */
+    border: 1px solid rgba(127, 29, 29, 0.1);
+    box-shadow: 0 15px 30px rgba(127, 29, 29, 0.04);
   }
   .hero-title {
-    font-size: 2.1rem;
-    line-height: 1.2;
-    margin-bottom: 1.1rem;
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin-bottom: 0.7rem;
     color: var(--brown-deep);
     text-align: left;
   }
   .hero-role {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1.8rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 1.3rem;
     color: var(--brown-soft);
     text-align: left;
     max-width: 100%;
@@ -1072,7 +1087,7 @@ header.scrolled .nav-pill {
   .hero-cta .btn {
     width: 100%;
     max-width: 280px;
-    padding: 1.1rem;
+    padding: 0.95rem 1.1rem; /* Sleeker button height */
     justify-content: center;
     border-radius: 12px;
     font-size: 1rem;
