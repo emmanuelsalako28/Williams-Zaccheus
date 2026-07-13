@@ -94,11 +94,29 @@
 
   /* ---------- HEADER SCROLL INTERACTION ---------- */
   var header = document.querySelector('header');
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  
   window.addEventListener('scroll', function() {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
+      if (toggle && links) {
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+      }
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!links || !toggle) return;
+    var isClickInsideNav = links.contains(event.target);
+    var isClickInsideToggle = toggle.contains(event.target);
+    if (!isClickInsideNav && !isClickInsideToggle) {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
     }
   });
 

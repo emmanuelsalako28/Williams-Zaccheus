@@ -877,6 +877,119 @@ header.scrolled .nav-pill {
   color: #fff;
 }
 
+/* Desktop scrolled hamburger navigation */
+@media (min-width: 861px) {
+  /* When header is scrolled, collapse desktop header items */
+  header.scrolled .social-icons {
+    position: absolute;
+    right: 6vw;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+  }
+  
+  header.scrolled .nav-pill:not(.open) {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  header.scrolled .nav-wrap {
+    justify-content: center;
+    position: relative;
+    height: 70px;
+  }
+
+  /* Show circular hamburger on desktop scroll */
+  header.scrolled #navToggle {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(25, 4, 43, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  header.scrolled #navToggle span {
+    width: 20px;
+    height: 2px;
+    background: var(--terracotta-soft);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  header.scrolled #navToggle:hover {
+    border-color: var(--terracotta-soft);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.35);
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  /* If links is open, display as dropdown */
+  header.scrolled .nav-pill.open {
+    display: flex;
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: rgba(25, 4, 43, 0.95);
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 100px;
+    padding: 0.8rem 2.2rem;
+    gap: 2rem;
+    animation: navPillDropdown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  @keyframes navPillDropdown {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -15px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  /* Center alignment for toggle lines when open */
+  header.scrolled #navToggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  header.scrolled #navToggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  header.scrolled #navToggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Light mode overrides for scrolled header */
+  body.light-mode header.scrolled #navToggle {
+    background: rgba(246, 241, 231, 0.9);
+    border-color: rgba(44, 27, 18, 0.12);
+    box-shadow: 0 4px 20px rgba(44, 27, 18, 0.1);
+  }
+  body.light-mode header.scrolled .nav-pill.open {
+    background: rgba(246, 241, 231, 0.98);
+    border-color: rgba(44, 27, 18, 0.12);
+    box-shadow: 0 10px 30px rgba(44, 27, 18, 0.15);
+  }
+}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width: 860px) {
   /* Full-bleed background hero on mobile */
