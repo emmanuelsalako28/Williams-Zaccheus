@@ -436,8 +436,7 @@ header.scrolled .nav-pill {
 .hero-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, #0F0304 0%, rgba(15, 3, 4, 0.55) 40%, transparent 80%),
-              linear-gradient(to top, #0F0304 0%, rgba(15, 3, 4, 0.3) 30%, transparent 70%);
+  background: linear-gradient(to top, #0F0304 0%, rgba(15, 3, 4, 0.8) 15%, transparent 45%);
   pointer-events: none;
   z-index: 6;
 }
@@ -1030,7 +1029,7 @@ header.scrolled .nav-pill {
     display: block;
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(15, 3, 4, 0.95) 0%, rgba(15, 3, 4, 0.65) 45%, rgba(15, 3, 4, 0.2) 100%);
+    background: linear-gradient(to top, rgba(15, 3, 4, 0.95) 0%, rgba(15, 3, 4, 0.7) 45%, transparent 75%);
     z-index: 2;
   }
   .hero-text-col {
@@ -1204,8 +1203,7 @@ body.light-mode::before {
 
 /* Hero image gradient overlay */
 body.light-mode .hero-image-overlay {
-  background: linear-gradient(to right, #FFFDF7 0%, rgba(255, 253, 247, 0.5) 40%, transparent 80%),
-              linear-gradient(to top, #FFFDF7 0%, rgba(255, 253, 247, 0.3) 30%, transparent 70%);
+  background: linear-gradient(to top, #FFFDF7 0%, rgba(255, 253, 247, 0.8) 15%, transparent 45%);
 }
 
 /* Navigation glass pill updates */
